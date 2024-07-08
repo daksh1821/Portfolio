@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Daksh Jain</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #090521;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 75px;
+            background-color: rgb(0, 157, 255);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 25px;
+            list-style: none; 
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        nav ul li a:hover {
+            color: darkslateblue;
+        }
+        .left {
+            font-size: 1.5rem;
+        }
+        .right {
+            text-align: right;
+            font-weight: bold;
+        }
+        main {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .about-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-intro h1 {
+            font-size: 2.5rem;
+            color: #7B00FF;
+            margin-bottom: 10px;
+        }
+
+        .about-intro p {
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .about-intro .highlight {
+            color: #7B00FF;
+            font-weight: 700;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #7B00FF;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .skills ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .skills ul li:hover {
+            transform: scale(1.1);
+        }
+
+        .projects ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .projects ul li {
+            background-color: #000000;
+            border-left: 5px solid #007BFF;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+
+        .contact {  
+            background-color: #007BFF;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin-bottom: 30px;
+        }
+
+        .contact a {
+            display: inline-block;
+            color: #007BFF;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .contact a:hover {
+            background-color: #e6e6e6;
+            color: #007BFF;
+        }
+
+        footer {
+            background-color: #333;
+            color: #777;
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        footer div {
+            margin: 20px;
+        }
+
+        footer h3 {
+            color: white;
+        }
+        footer h4{
+            color: white;
+            margin-bottom: 20px;
+            margin-left: 140px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+        }
+
+        footer ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: white;
+        }
+
+        footer .social {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer .social a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        footer .social a:hover {
+            color: #007BFF;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            width: 100%;
+        }
+        .social img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <p>Daksh Portfolio</p>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#footer-contact">Contact</a></li>
+                    <li><a href="/">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="about-intro">
+            <h1>About Me</h1>
+            <p>Hi, I'm <span class="highlight">Daksh Jain</span>. I'm a passionate Web Developer and UI/UX Designer with experience in Java and MongoDB. I thrive on creating user-friendly and aesthetically pleasing web applications.</p>
+        </section>
+        <section class="background">
+            <h2>Background and Experience</h2>
+            <p>I started my journey in web development in 2023. Since then, I have been constantly learning and growing in this field. My experience includes working as a Frontend Developer, Node.js Developer, and Figma Designer. I have been involved in various projects that have honed my skills in different areas of web development.</p>
+        </section>
+        <section class="skills">
+            <h2>Skills and Expertise</h2>
+            <ul>
+                <li>Web Development: HTML, CSS, JavaScript, React</li>
+                <li>Backend Development: Node.js, Express.js, MongoDB</li>
+                <li>UI/UX Design: Figma</li>
+                <li>Programming Languages: Java</li>
+                <li>Tools: GitHub , Vs code</li>
+            </ul>
+        </section>
+        <section class="philosophy">
+            <h2>My Philosophy</h2>
+            <p>I believe in continuous learning and improvement. My goal is to create web applications that are not only functional but also provide a great user experience. I am committed to staying updated with the latest trends and technologies in web development.</p>
+        </section>
+        <section class="projects">
+            <h2>Projects and Achievements</h2>
+            <p>Throughout my career, I have worked on numerous projects that have challenged me and helped me grow as a developer. Some of my notable projects include:</p>
+            <ul>
+                <li><strong>Project A:</strong> An online laundry service web-app, built-by node.js and express.js</li>
+                <li><strong>Project B:</strong> An e-commerce website developed using HTML, CSS, JavaScript, and MongoDB.</li>
+                <li><strong>Project C:</strong> A portfolio website designed with Figma and implemented using modern web technologies.</li>
+            </ul>
+        </section>
+        <section class="interests">
+            <h2>Personal Interests</h2>
+            <p>When I'm not coding, I enjoy exploring new technologies, reading about the latest trends in tech, and working on personal projects. I also love photography and traveling, which helps me gain new perspectives and inspiration for my work.</p>
+        </section>
+        <section class="contact" id="footer-contact">
+            <h2>Get In Touch</h2>
+            <p>If you'd like to know more about me or my work, feel free to contact me. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="mailto:e22cseu1238@bennett.edu.in">e22cseu1238@bennett.edu.in</a></li>
+                <li><a href="tel:+919358440540">+91-9358440540</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Follow Me</h4>
+            <div class="social">
+                <a href="https://github.com/daksh1821" target="_blank"><img class="image-top5" src="github.png" alt="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/daksh-jain-5620b5251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="linkedin.png" alt="LinkedIn">LinkedIn</a>
+                <a href="https://www.instagram.com/daksh_j28?igsh=a3U5NWtwamV6NXJo" target="_blank"><img src="instagram-icon.png" alt="Instagram">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Daksh Jain. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

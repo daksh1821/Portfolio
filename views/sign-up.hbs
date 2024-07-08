@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .signup-container {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 80%;
+            max-width: 900px;
+            font-size: 1rem;
+        }
+
+        .signup-left {
+            background-color: rgb(0, 157, 255);
+            padding: 40px;
+            color: white;
+            flex: 1;
+        }
+
+        .signup-left h1 {
+            margin-top: 300px;
+        }
+
+        .signup-left p {
+            color: #060606;
+            font-size: 1rem;
+            line-height: 1.5;   
+        }
+
+        .signup-right {
+            padding: 40px;
+            flex: 1;
+        }
+
+        .signup-right h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+        }
+
+        .social-btn img {
+            width: 30px;
+            height: 35px;
+        }
+
+        .social-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .or-divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            font-size: 1rem;
+            color: #999;
+        }
+
+        .or-divider::before, .or-divider::after {
+            content: '';
+            height: 1px;
+            background: #ddd;
+            width: 40%;
+            position: absolute;
+            top: 50%;
+        }
+
+        .or-divider::before { left: 0; }
+        .or-divider::after { right: 0; }
+
+        .signup-form .input-group {
+            margin-bottom: 20px;
+        }
+
+        .signup-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .terms input {
+            margin-right: 10px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #6c63ff;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-submit:hover {
+            background: #5753d6;
+        }
+
+        .signin-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .signin-link a {
+            color: #6c63ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .signin-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-left">
+            <h1>Welcome to signup form</h1>
+        </div>
+        <div class="signup-right">
+            <h2>Signup with these services</h2>
+            <div class="social-icons">
+                <button class="social-btn google"><img src="google.png" alt="Google"></button>
+                <button class="social-btn facebook"><img src="facebook.png" alt="Facebook"></button>
+                <button class="social-btn twitter"><img src="apple.png" alt="Apple"></button>
+            </div>
+            <div class="or-divider">or</div>
+            <form class="signup-form" id="signup-form">
+                <div class="input-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I Agree All Statements In Terms Of Service</label>
+                </div>
+                <button type="submit" class="btn-submit">Create an account</button>
+            </form>
+            <p class="signin-link">I'm already a member! <a href="/login">Sign In</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const fullName = document.getElementById('full-name').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const terms = document.getElementById('terms').checked;
+
+    if (!terms) {
+      alert('You must agree to the terms of service.');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ fullName, username, email, password })
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert('Signup successful!');
+        window.location.href = '/login';
+      } else {
+        console.error('Signup failed:', data);
+        alert(`Signup failed: ${data.message}`);
+      }
+    } catch (error) {
+      console.error('Error during fetch:', error);
+      alert('An error occurred. Please try again.');
+    }
+  });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+      body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    flex: 0 0 150px;
+    margin-right: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-details h1 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.profile-content .bio, .profile-content .experience, .profile-content .contact {
+    margin-bottom: 20px;
+}
+
+.profile-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.experience-item {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+}
+
+.experience-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.experience-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.contact p {
+    margin: 5px 0;
+}
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+.logout-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .logout-btn:hover {
+            background-color: #d32f2f;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="{{user.photo}}" alt="Profile Picture" class="rounded-circle">
+            </div>
+            <div class="profile-details">
+                <h1>{{user.fullName}}</h1>
+                <p>@{{user.username}}</p>
+                <p>{{user.email}}</p>
+            </div>
+        </div>
+        <div class="profile-content">
+            <div class="bio">
+                <h2>Bio</h2>
+                <p>Welcome to my profile! Here you can learn more about me.</p>
+            </div>
+            <div class="experience">
+                <h2>Experience</h2>
+                {{#each experiences}}
+                    <div class="experience-item">
+                        <h3>{{this.title}}</h3>
+                        <p>{{this.description}}</p>
+                        <p>{{this.startDate}} - {{this.endDate}}</p>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="contact">
+                <h2>Contact</h2>
+                <p>Email: {{user.email}}</p>
+                <!-- Add more contact details if necessary -->
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+     <script>
+        function logout() {
+            fetch('/logout', {
+                method: 'GET',
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/index';
+                } else {
+                    alert('Logout failed');
+                }
+            })
+            .catch(error => {
+                console.error('Logout error:', error);
+                alert('An error occurred during logout.');
+            });
+        }
+    </script>
+</body>
+</html>

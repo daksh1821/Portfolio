@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daksh Portfolio-Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #100b2d;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 75px;
+            padding: 10px 20px;
+            background-color: rgb(0, 157, 255);
+        }
+        nav ul {
+            margin: 350px;
+            display: flex;
+            justify-content: center;
+            justify-content: space-between;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+            list-style: none; 
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        nav ul li a:hover {
+            color: darkslateblue;
+        }
+        .left {
+            font-size: 1.5rem;
+        }
+        .right {
+            text-align: right;
+            font-weight: bold;
+        }
+        .right ul {
+            margin-right: 20px;
+        }
+        .btn-login, .btn-signup {
+            padding: 5px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn-login {
+            background: linear-gradient(45deg, #1d8cf8, #3358f4);
+            color: white;
+            margin-right: 10px;
+        }
+        .btn-login:hover {
+            background: linear-gradient(45deg, #0c6cd6, #1b47d0);
+            transform: scale(1.05);
+        }
+        .btn-signup {
+            background: linear-gradient(45deg, #f4a261, #f4a261);
+            color: white;
+        }
+        .btn-signup:hover {
+            background: linear-gradient(45deg, #e67e22, #e67e22);
+            transform: scale(1.05);
+        }
+        .logo-section {
+            background-color: #000000;
+            filter: blur();
+            text-align: center;
+        }
+        .logo-section img {
+            width: 300px;
+            height: auto;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 100px 0;
+            font-weight: bold;
+            align-items: center;
+        }
+        .firstsection > div {
+            width: 35%;
+            height: 70vh;
+        }
+        .leftsection {
+            font-size: 3rem;
+        }
+        .leftsection .btn {
+            padding: 12px 24px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-right: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .leftsection .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .rightsection img {
+            width: 80%;
+            margin: 20px 0;
+        }
+        .purple {
+            color: #7B00FF;
+        }
+        #element {
+            color: rgb(102, 0, 255);
+        }
+        .secondsection {
+            max-width: 75vw;
+            margin: auto;
+            height: 80vh;
+        }
+        .secondsection h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 2rem;
+        }
+        .text-gray {
+            color: gray;
+        }
+        .secondsection .box {
+            background-color: aliceblue;
+            width: 80vw;
+            height: 2px;
+            margin: 40px 0px;
+            display: flex;
+        }
+        .secondsection .vertical {
+            height: 200px;
+            width: 1.5px;
+            background-color: antiquewhite;
+            margin: 0 100px;
+        }
+        .box {
+            display: flex;
+            justify-content: space-between;
+        }
+        .vertical {
+            margin: 0px 80px;
+        }
+        .image-top {
+            width: 105px;
+            margin: 25px 60px;
+        }
+        .image-top1 {
+            width: 65px;
+            margin-left: 20px;
+        }
+        .image-top2 {
+            width: 70px;
+            margin: 10px 75px;
+        }
+        .image-top3 {
+            width: 70px;
+            margin: 10px 67px;
+        }
+        .image-top4 {
+            width: 70px;
+            margin: 10px 67px;
+        }
+        .image-top5{
+            width: 150px;
+        }
+        .image-top6{
+            width: 150px;
+        }
+        .image-top7{
+            width: 150px;
+            margin: -10px;
+        }
+        .vertical-desc {
+            margin: 20px 65px;
+        }
+        .vertical-text {
+            margin: 0px 55px;
+        }
+        .vertical-up {
+            margin: 0px 80px;
+        }
+        .vertical-left {
+            margin: 0px 70px;
+        }
+        .vertical-right {
+            margin: 0px 60px;
+        }
+        .skills-section {
+            width: 90vw;
+            background-color: #007BFF;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 150px;
+            margin-left: 100px;
+        }
+        .skills-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .skill {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            transition: transform 0.3s;
+            text-align: center;
+            color: white;
+            text-decoration: none; /* Ensure the text color stays white */
+        }
+        .skill img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        .skill:hover {
+            transform: scale(1.05);
+            background-color: #292929;
+        }
+        .skill h3 {
+            margin-top: 10px;
+        }
+        
+        footer {
+            background-color: #151515;
+            color: #777;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-top: 50px;
+        }
+        footer div {
+            margin: 20px;
+        }
+        footer h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer ul li {
+            margin: 10px 0;
+        }
+        footer ul li a {
+            color: #777;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            color: white;
+        }
+        footer .social {
+            display: flex;
+            justify-content: space-between;
+        }
+        footer .social a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        footer .social a:hover {
+            color: #007BFF;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+        }
+        .social{
+            justify-content: space-between;
+            display: list-item;
+        }
+        .follow h3{
+            margin: 0px 170px;
+            justify-content:center;
+            align-items:center;
+        }
+        .footer-bottom{
+            display:flex;
+            justify-content:center;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+        }
+        .social img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4">User Profile</h1>
+                <p class="lead">Welcome, {{user.displayName}}</p>
+                <img src="{{user.photo}}" alt="Profile Picture" class="rounded-circle" width="150">
+                <div class="mt-4">
+                    <p><strong>Email:</strong> {{user.email}}</p>
+                </div>
+                <div class="mt-4">
+                    <a href="/logout" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/project">Projects</a></li>
+                    <li><a href="#footer-contact">Contact</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <button class="btn-login" onclick="location.href='/login'">Login</button>
+                    <button class="btn-signup" onclick="location.href='/sign-up'">Sign-Up</button>
+                </ul>
+            </div>
+        </nav>  
+    </header>
+    <div class="logo-section">
+        <img src="Elite Portfolio.png" alt="Company Logo">
+    </div>
+    <main>
+        <section class="firstsection">
+                <div class="leftsection">
+                    <div class="profile-container">
+                    <img id="profile-picture" src="user.photo" alt="Profile Picture">
+                </div>
+                Hi, I am <span class="purple">Daksh Jain</span>
+                <div>and I am a Passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <a href="Daksh_resume.pdf" class="btn" download>Download Resume</a>
+                    <a href="https://github.com/daksh1821" class="btn">Visit Github</a>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="PngItem_1127587.png" alt="Daksh Jain">
+            </div>
+        </section>
+        <section class="secondsection">
+            <span class="text-gray">What I have done so far</span>
+            <h1>Work Experiences</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="web.png" alt="Web Development">
+                    <div class="vertical-text">Frontend Developer (2023-Present)</div>
+                </div>
+                <div class="vertical">
+                    <div class="vertical-desc">
+                        <img class="image-top1" src="nodejs.png" alt="Node.js">
+                        Node.js Developer (2023-Present)
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top2" src="java-logo-1.png" alt="Java">
+                    <div class="vertical-up">
+                        Java Developer (2023-Present)
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top3" src="Figma-01.png" alt="Figma">
+                    <div class="vertical-left">Figma Designer (2023-Present)</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top4" src="mongodb.png" alt="MongoDB">
+                    <div class="vertical-right">Mongo DB (2023-Present)</div>
+                </div>
+                <div class="vertical"></div>
+            </div>
+        </section>
+        <section class="skills-section">
+            <h1>My Skills</h1>
+            <div class="skills-container">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="skill">
+                    <img src="html-icon.png" alt="HTML5">
+                    <h3>HTML5</h3>
+                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="skill">
+                    <img class="image-top7" src="css.png" alt="CSS3">
+                    <h3>CSS3</h3>
+                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="skill">
+                    <img src="javascript.png" alt="JavaScript">
+                    <h3>JavaScript</h3>
+                </a>
+                <a href="https://reactjs.org/docs/getting-started.html" target="_blank" class="skill">
+                    <img class="image-top6" src="react.png" alt="React">
+                    <h3>React</h3>
+                </a>
+                <a href="https://nodejs.org/en/docs/" target="_blank" class="skill">
+                    <img src="nodejs.png" alt="Node.js">
+                    <h3>Node.js</h3>
+                </a>
+                <a href="https://docs.mongodb.com/" target="_blank" class="skill">
+                    <img src="mongodb.png" alt="MongoDB">
+                    <h3>MongoDB</h3>
+                </a>
+                <a href="https://www.figma.com/resources/learn-design/" target="_blank" class="skill">
+                    <img src="Figma-01.png" alt="Figma">
+                    <h3>Figma</h3>
+                </a>
+                <a href="https://docs.oracle.com/en/java/" target="_blank" class="skill">
+                    <img src="java-logo-1.png" alt="Java">
+                    <h3>Java</h3>
+                </a>
+            </div>
+        </section>
+        
+    </main>
+    <footer class="contact" id="footer-contact">
+        <div>
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="mailto:e22cseu1238@bennett.edu.in">e22cseu1238@bennett.edu.in</a></li>
+                <li><a href="tel:+919358440540">+91-9358440540</a></li>
+            </ul>
+        </div>
+        <div>
+        <div class="follow">
+            <h3>Follow Me</h3>
+            <div class="social">
+                <a href="https://github.com/daksh1821" target="_blank"><img class="image-top5" src="github.png" alt="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/daksh-jain-5620b5251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="linkedin.png" alt="LinkedIn">LinkedIn</a>
+                <a href="https://www.instagram.com/daksh_j28?igsh=a3U5NWtwamV6NXJo" target="_blank"><img src="instagram-icon.png" alt="Instagram">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Daksh Jain. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Developer','UI/UX Designer', 'Java Coder'],
+          typeSpeed: 55,
+        });
+    </script>
+    <script>
+        async function fetchUserProfile() {
+            const token = localStorage.getItem('token');
+            const userId = daksh2872004@gmail.com; 
+            if (!token) {
+                alert('You are not logged in!');
+                return;
+            }
+        
+            try {
+                const response = await fetch(`/api/user/${userId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    const data = await response.json();
+                    throw new Error(data.message);
+                }
+
+                const user = await response.json();
+                const profilePicture = document.getElementById('profile-picture');
+                profilePicture.src = user.photo || 'default-profile.png'; // Default profile picture if none exists
+            } catch (error) {
+                console.error('Error fetching user profile:', error);
+                alert('Failed to fetch user profile. Please try again.');
+            }
+        }
+
+        fetchUserProfile();
+    </script>
+    
+</body>
+</html>
