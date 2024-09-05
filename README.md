@@ -1,5 +1,5 @@
 # portfolio
-# [Your Name] Portfolio Website
+# [Daksh Jain] Portfolio Website
 
 Welcome to my personal portfolio website! This site showcases my work, skills, and experiences as a [Your Profession, e.g., Web Developer, Designer, etc.]. It serves as a digital resume and a space to display my projects and accomplishments.
 
